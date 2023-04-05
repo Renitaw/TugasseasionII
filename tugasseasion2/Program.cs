@@ -75,7 +75,7 @@ namespace tugasseasion2
                                                     string THN = Console.ReadLine();
                                                     try
                                                     {
-                                                        pr.insert(JDL, PRDSR, ART, ALB, THN);
+                                                        pr.insert(JDL, PRDSR, ART, ALB, THN, conn);
                                                         conn.Close();
                                                     }
                                                     catch
@@ -120,7 +120,7 @@ namespace tugasseasion2
         }
         public void baca(SqlConnection con)
         {
-            SqlCommand cmd = new SqlCommand("Select = From HRD.Mahasiswa", con);
+            SqlCommand cmd = new SqlCommand("Select = From Album", con);
             SqlDataReader r = cmd.ExecuteReader();
             while(r.Read())
             {
@@ -131,5 +131,22 @@ namespace tugasseasion2
                 Console.WriteLine();
             }
         }
+        public void insert (string JDL, string PRDSR, string ART, string ALB, string THN, SqlConnection con)
+        {
+            string str = "";
+            str = "insert  into HRD.MAHASISWA (NIM,NamaMhs,AlamatMhs,sex,PhoneMhs)"
+                + "Values(@nim,@nma,@alamat,@JK,@Phn)";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("judul", JDL));
+            cmd.Parameters.Add(new SqlParameter("produser", PRDSR));
+            cmd.Parameters.Add(new SqlParameter("Artis", ART));
+            cmd.Parameters.Add(new SqlParameter("Album", ALB));
+            cmd.Parameters.Add(new SqlParameter("Tahun", THN));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil Ditambahkan");
+        }
+
     }
 }
