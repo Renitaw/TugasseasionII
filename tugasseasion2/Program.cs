@@ -48,6 +48,19 @@ namespace tugasseasion2
                                         Console.WriteLine("3. Keluar");
                                         Console.Write("\nEnter your choice (1-3): ");
                                         char ch = Convert.ToChar(Console.ReadLine());
+                                        switch(ch)
+                                        {
+                                            case '1':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("Data Album Lagu\n");
+                                                    Console.WriteLine();
+                                                    pr.baca(conn);
+                                                    conn.Close();
+                                                }
+                                                break;
+
+                                        }
                                     }
                                 }
                             }
