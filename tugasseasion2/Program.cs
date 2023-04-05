@@ -84,15 +84,38 @@ namespace tugasseasion2
                                                     }
                                                 }
                                                 break;
+                                            case '3':
+                                                conn.Close();
+                                                return;
+                                            default:
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("\nInvalid option");
                                                 }
-
-
+                                                break;
                                         }
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("\nCheck for the value entered.");
                                     }
                                 }
                             }
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid option");
+                            }
+                            break;
                     }
                 }
+                catch
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Tidak Dapat Mengakases Database Menggunakan User Tersebut\n");
+                    Console.ResetColor();
+                }
+
             }
         }
     }
