@@ -59,6 +59,33 @@ namespace tugasseasion2
                                                     conn.Close();
                                                 }
                                                 break;
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("INPUT Daftar Putar\n");
+                                                    Console.WriteLine("Masukkan Judul Lagu : ");
+                                                    string JDL = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Nama Produser :");
+                                                    string PRDSR = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Nama Artis : ");
+                                                    string ART = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Nama Album : ");
+                                                    string ALB = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Tahun Rilis : ");
+                                                    string THN = Console.ReadLine();
+                                                    try
+                                                    {
+                                                        pr.insert(JDL, PRDSR, ART, ALB, THN);
+                                                        conn.Close();
+                                                    }
+                                                    catch
+                                                    {
+                                                        Console.WriteLine("\nAnda tidak memiliki" + "akses untuk menambah data");
+                                                    }
+                                                }
+                                                break;
+                                                }
+
 
                                         }
                                     }
