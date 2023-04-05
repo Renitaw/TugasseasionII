@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Sql;
 
 namespace tugasseasion2
 {
@@ -10,6 +12,11 @@ namespace tugasseasion2
     {
         static void Main(string[] args)
         {
+            Program pr = new Program();
+            while (true)
+            {
+
+            }
         }
     }
 }
